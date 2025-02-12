@@ -5,11 +5,7 @@ import UserCard from "@/components/ui/shared/UserCard";
   import { useGetRecentPosts, useGetUsers } from "@/lib/react-query/queriesAndMutations";
   import { Models } from "appwrite";
 
-
-  import { Key } from "react";
-
   const Home = () => {
-    
 
     const {
       data: posts,
@@ -60,7 +56,7 @@ import UserCard from "@/components/ui/shared/UserCard";
             <Loader />
           ) : (
             <ul className="grid 2xl:grid-cols-2 gap-6">
-              {creators?.documents.map((creator: { $id: Key | null | undefined; }) => (
+              {creators?.documents.map((creator: any) => (
                 <li key={creator?.$id}>
                   <UserCard user= { creator } />
                 </li>

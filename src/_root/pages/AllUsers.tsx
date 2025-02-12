@@ -2,7 +2,6 @@ import { useToast } from "@/components/ui";
 import Loader from "@/components/ui/shared/Loader";
 import UserCard from "@/components/ui/shared/UserCard";
 import { useGetUsers } from "@/lib/react-query/queriesAndMutations";
-import { Key } from "react";
 
 
 
@@ -25,7 +24,7 @@ const AllUsers = () => {
           <Loader />
         ) : (
           <ul className="user-grid">
-            {creators?.documents.map((creator: { $id: Key | null | undefined; }) => (
+            {creators?.documents.map((creator: any) => (
               <li key={creator?.$id} className="flex-1 min-w-[200px] w-full  ">
                 <UserCard user={creator} />
               </li>
